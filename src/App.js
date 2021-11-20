@@ -29,7 +29,6 @@ export default function App() {
         enable: true,
         outMode: "bounce",
         random: false,
-        speed: 3,
         straight: false,
       },
       number: {
