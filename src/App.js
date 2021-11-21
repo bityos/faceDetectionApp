@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
 import Logo from './components/Logo/Logo';
@@ -58,7 +59,7 @@ export default function App() {
       init={particlesInit}
       loaded={particlesLoaded}
       params={options}
-      />
+     />
       <Navigation/>
        <Logo/>
        <Rank/>
