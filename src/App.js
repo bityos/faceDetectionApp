@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
 import Logo from './components/Logo/Logo';
@@ -7,6 +7,7 @@ import Rank from './components/Rank/Rank';
 import Particles from "react-tsparticles";
 
 export default function App() {
+
   const particlesInit = (main) => {};
   const particlesLoaded = (container) => {};
   const options={
@@ -51,7 +52,19 @@ export default function App() {
       },
     },
     detectRetina: true,
-  } 
+  }; 
+
+  const [input, setInput] = useState('')
+
+  const onInputChange = (event) =>{
+    setInput(input)
+    console.log(event.target.value)
+  };
+
+  const onButtonSubmit = () =>{
+    console.log('click')
+  };
+
   return (
     <div className="App">
      <Particles className='particles'
@@ -63,7 +76,10 @@ export default function App() {
       <Navigation/>
        <Logo/>
        <Rank/>
-      <ImageLinkForm/>
+      <ImageLinkForm 
+       onInputChange={onInputChange} 
+       onSubmit={onButtonSubmit}
+      />
       {/*<FaceDetection/> */}
     </div>
   );
